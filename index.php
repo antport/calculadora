@@ -7,24 +7,29 @@ for ($i=0;$i<4; $i++)
 	}
 
 // comprobar si se ha enviado algo //
-
 if (isset($_GET['ope1'])){
 
-	if ($_GET['op']=='+')
-		{$resutado=$_GET['ope1']+$_GET['ope2'];
-		$sel[0]='selected';}
-
-	if ($_GET['op']=='-')
-		{$resutado=$_GET['ope1']-$_GET['ope2'];
-		$sel[1]='selected';}
-
-	if ($_GET['op']=='/')
-		{$resutado=$_GET['ope1']/$_GET['ope2'];
-		$sel[2]='selected';}
-
-	if ($_GET['op']=='*')
-		{$resutado=$_GET['ope1']*$_GET['ope2'];
-		$sel[3]='selected';}
+	switch($_GET['op']){
+		case '+':
+		$resutado=$_GET['ope1']+$_GET['ope2'];
+		$sel[0]='selected';
+		break;
+	
+		case '-':
+		$resutado=$_GET['ope1']-$_GET['ope2'];
+		$sel[1]='selected';
+		break;
+	
+		case '/':
+		$resutado=$_GET['ope1']/$_GET['ope2'];
+		$sel[2]='selected';
+		break;
+	
+		case '*':
+		$resutado=$_GET['ope1']*$_GET['ope2'];
+		$sel[3]='selected';
+		break;
+	}
 }
 
 else{
@@ -32,6 +37,7 @@ else{
 	$_GET['op']='+';
 	$_GET['ope2']='';
 	}
+
 ?>
 
 
